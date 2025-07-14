@@ -8,7 +8,7 @@ import "./App.css";
 import Forms from "./components/Forms";
 import RoomPage from "./pages/RoomPage";
 
-const server = "http://localhost:5000";
+const server = "https://vision-board-3uw4.onrender.com" || "http://localhost:5002";
 const connectionOptions = {
   "force new connection": true,
   reconnectionAttempts: "Infinity",
@@ -119,92 +119,92 @@ const App = () => {
           path="/:roomId"
           element={
             <>
-<button
-  onClick={() => setOpenVideo(!openVideo)}
-  style={{
-    position: "absolute",
-    top: "30px",
-    right: "40px",
-    height: "50px", 
-    width: "120px", 
-    background: "linear-gradient(135deg, #ff6f61, #de2d7f)",
-    border: "2px solid #ff6f61", 
-    borderRadius: "50px", 
-    color: "#ffffff", 
-    fontSize: "16px", 
-    fontWeight: "700", 
-    textAlign: "center",
-    lineHeight: "50px", 
-    boxShadow: "0 4px 10px rgba(0, 0, 0, 0.3)", 
-    cursor: "pointer",
-    transition: "all 0.3s ease-in-out", 
-    outline: "none",
-    textTransform: "uppercase",
-    letterSpacing: "1px", 
-    padding: "0 20px", 
-  }}
-  onMouseEnter={(e) => {
-    e.currentTarget.style.boxShadow = "0 6px 15px rgba(0, 0, 0, 0.4)";
-    e.currentTarget.style.transform = "scale(1.1)";
-    e.currentTarget.style.background = "linear-gradient(135deg, #de2d7f, #ff6f61)";
-    e.currentTarget.style.borderColor = "#de2d7f";
-  }}
-  onMouseLeave={(e) => {
-    e.currentTarget.style.boxShadow = "0 4px 10px rgba(0, 0, 0, 0.3)";
-    e.currentTarget.style.transform = "scale(1)";
-    e.currentTarget.style.background = "linear-gradient(135deg, #ff6f61, #de2d7f)"; 
-    e.currentTarget.style.borderColor = "#ff6f61"; r
-  }}
->
-  Video
-</button>
+              <button
+                onClick={() => setOpenVideo(!openVideo)}
+                style={{
+                  position: "absolute",
+                  top: "30px",
+                  right: "40px",
+                  height: "50px",
+                  width: "120px",
+                  background: "linear-gradient(135deg, #ff6f61, #de2d7f)",
+                  border: "2px solid #ff6f61",
+                  borderRadius: "50px",
+                  color: "#ffffff",
+                  fontSize: "16px",
+                  fontWeight: "700",
+                  textAlign: "center",
+                  lineHeight: "50px",
+                  boxShadow: "0 4px 10px rgba(0, 0, 0, 0.3)",
+                  cursor: "pointer",
+                  transition: "all 0.3s ease-in-out",
+                  outline: "none",
+                  textTransform: "uppercase",
+                  letterSpacing: "1px",
+                  padding: "0 20px",
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.boxShadow = "0 6px 15px rgba(0, 0, 0, 0.4)";
+                  e.currentTarget.style.transform = "scale(1.1)";
+                  e.currentTarget.style.background = "linear-gradient(135deg, #de2d7f, #ff6f61)";
+                  e.currentTarget.style.borderColor = "#de2d7f";
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.boxShadow = "0 4px 10px rgba(0, 0, 0, 0.3)";
+                  e.currentTarget.style.transform = "scale(1)";
+                  e.currentTarget.style.background = "linear-gradient(135deg, #ff6f61, #de2d7f)";
+                  e.currentTarget.style.borderColor = "#ff6f61"; r
+                }}
+              >
+                Video
+              </button>
 
-<div
-  className="video-grid h-100 position-fixed top-0 d-flex flex-column align-items-start p-3"
-  style={{
-    zIndex: 1000,
-    right: openVideo ? "0" : "-100%",
-    transition: "right 0.4s ease, transform 0.3s ease",
+              <div
+                className="video-grid h-100 position-fixed top-0 d-flex flex-column align-items-start p-3"
+                style={{
+                  zIndex: 1000,
+                  right: openVideo ? "0" : "-100%",
+                  transition: "right 0.4s ease, transform 0.3s ease",
 
-    borderRadius: "0 0 0 10px",
-    boxShadow: "0 0 15px rgba(0, 0, 0, 0.5)", 
-  }}
-  ref={videoGrid}
->
-  <button
-    className="btn-close"
-    onClick={() => setOpenVideo(false)}
-    style={{
-      backgroundColor: "#000",
-      border: "none",
-      borderRadius: "50%",
-      width: "40px",
-      height: "40px",
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "center",
-      boxShadow: "0 4px 8px rgba(0, 0, 0, 0.3)",
-      transition: "background-color 0.3s ease, transform 0.2s ease",
-      cursor: "pointer",
-    }}
-    onMouseOver={(e) => e.currentTarget.style.backgroundColor = "#000"}
-    onMouseOut={(e) => e.currentTarget.style.backgroundColor = "#000"}
-  >
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      fill="white"
-      className="bi bi-x"
-      viewBox="0 0 16 16"
-      style={{ cursor: "pointer" }}
-    >
-      <path
-        d="M4.293 4.293a1 1 0 0 1 1.414 0L8 5.586l2.293-1.293a1 1 0 1 1 1.414 1.414L9.414 7l2.293 2.293a1 1 0 1 1-1.414 1.414L8 8.414l-2.293 2.293a1 1 0 1 1-1.414-1.414L6.586 8 4.293 5.707a1 1 0 0 1 0-1.414z"
-      />
-    </svg>
-  </button>
-</div>
+                  borderRadius: "0 0 0 10px",
+                  boxShadow: "0 0 15px rgba(0, 0, 0, 0.5)",
+                }}
+                ref={videoGrid}
+              >
+                <button
+                  className="btn-close"
+                  onClick={() => setOpenVideo(false)}
+                  style={{
+                    backgroundColor: "#000",
+                    border: "none",
+                    borderRadius: "50%",
+                    width: "40px",
+                    height: "40px",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    boxShadow: "0 4px 8px rgba(0, 0, 0, 0.3)",
+                    transition: "background-color 0.3s ease, transform 0.2s ease",
+                    cursor: "pointer",
+                  }}
+                  onMouseOver={(e) => e.currentTarget.style.backgroundColor = "#000"}
+                  onMouseOut={(e) => e.currentTarget.style.backgroundColor = "#000"}
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    fill="white"
+                    className="bi bi-x"
+                    viewBox="0 0 16 16"
+                    style={{ cursor: "pointer" }}
+                  >
+                    <path
+                      d="M4.293 4.293a1 1 0 0 1 1.414 0L8 5.586l2.293-1.293a1 1 0 1 1 1.414 1.414L9.414 7l2.293 2.293a1 1 0 1 1-1.414 1.414L8 8.414l-2.293 2.293a1 1 0 1 1-1.414-1.414L6.586 8 4.293 5.707a1 1 0 0 1 0-1.414z"
+                    />
+                  </svg>
+                </button>
+              </div>
 
               <RoomPage
                 connectToNewUser={connectToNewUser}
